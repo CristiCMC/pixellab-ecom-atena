@@ -1,15 +1,17 @@
-import { css } from "@emotion/css";
+import { Footer, Header } from '@/components/common';
+import { css } from '@emotion/css';
 
 export const black = '#101010';
 export const white = '#fff';
-export const gray = '#f2f2f2'
+export const gray = '#f2f2f2';
 const mobileHeaderHeight = 60;
 
 export const Layout = ({ children }) => {
   const gridCss = css`
     display: grid;
     grid-template-areas:
-      'header' 'main-area';
+      'header'
+      'main-area';
     grid-template-rows: ${mobileHeaderHeight}px 1fr;
     min-height: 100vh;
 
@@ -41,12 +43,16 @@ export const Layout = ({ children }) => {
 
   return (
     <div className={gridCss}>
-      <header className={headerCss}>this is header</header>
+      <header className={headerCss}>
+        <Header></Header>
+      </header>
 
       <div className={mainAreaCss}>
         {children}
 
-        <footer className={footerCss}>this is footer</footer>
+        <footer className={footerCss}>
+          <Footer></Footer>
+        </footer>
       </div>
     </div>
   );
