@@ -20,7 +20,7 @@ export const useProduct = (productId) => {
             setProduct(product);
             productCache[productId] = product;
           })
-          .catch(() => {
+          .catch((err) => {
             setHttpStatus(404);
           })
           .finally(() => {
