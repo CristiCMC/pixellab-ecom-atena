@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-// keyName =>key name in local storage
+// keyName => key name in local storage
 export const useLocalStorage = (keyName, defaultValue) => {
   const [value, setValue] = useState(defaultValue);
   const [cache, setCache] = useState('');
 
   useEffect(() => {
     console.log('I run once');
-    // incerc sa na duc in localStorage sa iau "keyName"
+    // incerc sa ma duc in localStorage sa iau "keyName"
     const savedValue = localStorage.getItem(keyName);
 
     // verific daca aveam ceva in localStorage

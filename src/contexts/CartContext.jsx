@@ -1,15 +1,18 @@
 import { useCart } from '@/hooks';
-import React, { createContext} from 'react';
+import { createContext } from 'react';
 
 export const cartContext = createContext();
 
-export const CartContext = ({ children }) => {
-  const { cartProducts, loading, cartId } = useCart(2);
+const x = cartContext;
 
+export const CartContext = ({ children }) => {
+  const { cartProducts, loading, cartId, userId, setCartProducts } = useCart(2);
 
   return (
-    <cartContext.Provider value={{ cartProducts, loading, cartId }}>
+    <x.Provider
+      value={{ cartProducts, loading, cartId, userId, setCartProducts }}
+    >
       {children}
-      </cartContext.Provider>
+    </x.Provider>
   );
 };

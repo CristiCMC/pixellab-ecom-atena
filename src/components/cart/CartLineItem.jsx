@@ -1,5 +1,5 @@
-import {useProduct} from "@/hooks";
-import {ProductPrice} from "../catalog";
+import { useProduct } from '@/hooks';
+import { ProductPrice } from '../catalog';
 
 export const CartLineItem = ({ cartProduct }) => {
   const { productId, quantity } = cartProduct;
@@ -14,7 +14,7 @@ export const CartLineItem = ({ cartProduct }) => {
     );
   }
 
-  const { title, image, description, price } = product;
+  const { title, image, price } = product;
 
   return (
     <tr>
@@ -24,7 +24,7 @@ export const CartLineItem = ({ cartProduct }) => {
 
       <td>
         <h1>{title}</h1>
-        {/* insert retings */}
+        {/* insert ratings */}
       </td>
 
       <td>{price}</td>
@@ -32,10 +32,8 @@ export const CartLineItem = ({ cartProduct }) => {
       <td>{quantity}</td>
 
       <td>
-        <ProductPrice product={{ price: quantity * price}}></ProductPrice>
+        <ProductPrice product={{ price: quantity * price }}></ProductPrice>
       </td>
     </tr>
-  )
-
-  return <tr>x</tr>;
-}
+  );
+};

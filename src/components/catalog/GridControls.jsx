@@ -1,4 +1,4 @@
-import {useIsMobile} from '@/hooks';
+import { useIsMobile } from '@/hooks';
 import { UiContext } from '@/pages/_app';
 import { useContext } from 'react';
 
@@ -48,7 +48,7 @@ export const GridControls = () => {
       <li>
         <button
           type="button"
-          title="Four per row"
+          title="Two per row"
           className={`${buttonClasses} ${
             itemsPerRow === '4/row' ? 'bg-neutral-900 text-white' : ''
           }`}

@@ -30,7 +30,7 @@ export const Pagination = () => {
               <button
                 type="button"
                 title={`Page ${i}`}
-                className={`border border-zinc-200 p-2 hover:bg-black hover:text-white hover:scale-125 transition-colors ${
+                className={`border border-zinc-200 p-2 hover:bg-black hover:text-white transition-colors ${
                   page === i ? 'bg-black text-white' : ''
                 }`}
                 onClick={() => {

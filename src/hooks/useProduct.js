@@ -20,7 +20,7 @@ export const useProduct = (productId) => {
             setProduct(product);
             productCache[productId] = product;
           })
-          .catch((err) => {
+          .catch(() => {
             setHttpStatus(404);
           })
           .finally(() => {
@@ -28,6 +28,7 @@ export const useProduct = (productId) => {
           });
       } else {
         setProduct(productCache[productId]);
+        setLoading(false);
       }
     }
   }, [setProduct, productId]);

@@ -1,5 +1,4 @@
-
-import {CartContext} from '@/contexts/CartContext';
+import { CartContext } from '@/contexts';
 import { createContext, useEffect, useState } from 'react';
 import { useLocalStorage } from 'usehooks-ts';
 import './../styles/index.css';
@@ -17,7 +16,7 @@ export default function App({ Component, pageProps }) {
 
   useEffect(() => {
     setItemsPerRow(perRow);
-  }, [perRow, setItemsPerRow])
+  }, [perRow, setItemsPerRow]);
 
   return (
     <UiContext.Provider
@@ -29,7 +28,7 @@ export default function App({ Component, pageProps }) {
       }}
     >
       <CartContext>
-      <Component {...pageProps} />;
+        <Component {...pageProps} />;
       </CartContext>
     </UiContext.Provider>
   );
